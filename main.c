@@ -3,9 +3,11 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <time.h>
+#include <stdlib.h>
 
 struct stat stat1, stat2;
 struct tm time1, time2;
+int errno=1;
 
 void filestat1(void);
 void filestat2(void);
@@ -15,11 +17,13 @@ void sizecmp(void);
 void blockcmp(void);
 void datecmp(void);
 void timecmp(void);
+void errorcheck();
 
 int main(void)
 {
 	filestat1();
 	filestat2();
+	errorcheck();
 	filetime1();
 	filetime2();
 	sizecmp();
@@ -28,16 +32,37 @@ int main(void)
 	timecmp();
 }
 
+//파일 존재하지 않을 경우 예외처리를 출력
+void errorcheck(){
+  switch(errno){
+  case 2:
+		  perror("text1");
+		  exit(0);
+		  break; 
+  case 4: 
+		  perror("text2");
+		  exit(0);
+ 		  break;
+  case 8: 
+		  perror("text1 and text2");
+		  exit(0);
+  }
+}
+
 //파일 1의 정보를 가져오는 함수 작성
 void filestat1(void)
 {
-     stat("text1", &stat1);
+     if(stat("text1", &stat1)){
+        errno=errno<<1;
+     } 
 }
 
 //파일 2의 정보를 가져오는 함수 작성
 void filestat2(void)
 {
-     stat("text2", &stat2);
+     if(stat("text2", &stat2)){
+       errno=errno<<2;
+     }
 }
 
 //파일 1의 시간 정보를 가져오는 함수 작성
