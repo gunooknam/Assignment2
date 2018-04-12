@@ -9,4 +9,3 @@
 
 2013722001 최영진([gulike7](https://github.com/gulike7))
 
-2014722027 신현욱
