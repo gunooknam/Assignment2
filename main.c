@@ -53,7 +53,7 @@ void errorcheck(){
 void filestat1(void)
 {
      if(stat("text1", &stat1)){
-        errno=errno<<1;
+         errno=errno<<1;
      } 
 }
 
@@ -61,7 +61,7 @@ void filestat1(void)
 void filestat2(void)
 {
      if(stat("text2", &stat2)){
-       errno=errno<<2;
+         errno=errno<<2;
      }
 }
 
