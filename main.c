@@ -38,11 +38,9 @@ void errorcheck(){
   case 2:
 	 perror("text1 ");
 	 exit(0);
-	 break; 
   case 4: 
 	 perror("text2 ");
 	 exit(0);
- 	 break;
   case 8: 
 	 perror("text1 and text2 ");
 	 exit(0);
