@@ -36,16 +36,16 @@ int main(void)
 void errorcheck(){
   switch(errno){
   case 2:
-		  perror("text1");
-		  exit(0);
-		  break; 
+	 perror("text1 ");
+	 exit(0);
+	 break; 
   case 4: 
-		  perror("text2");
-		  exit(0);
- 		  break;
+	 perror("text2 ");
+	 exit(0);
+ 	 break;
   case 8: 
-		  perror("text1 and text2");
-		  exit(0);
+	 perror("text1 and text2 ");
+	 exit(0);
   }
 }
 
@@ -79,9 +79,9 @@ void filetime2(void)
 void sizecmp(void)
 {
    printf("size compare\n");
-   if ( (int)stat1.st_size> (int)stat2.st_size ) 
+   if ( stat1.st_size > stat2.st_size ) 
         printf("text1 is bigger\n\n");
-   else if ((int)stat1.st_size<(int)stat2.st_size ) 
+   else if (stat1.st_size < stat2.st_size ) 
 	printf("text2 is bigger\n\n");
    else 
 	printf("sizes are equal\n\n");
