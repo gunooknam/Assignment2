@@ -54,7 +54,7 @@ void filestat1(void)
 		errno=errno<<1;
 	}
 	/*
-	else{
+	else{ //테스트를 위한 코드
 		printf("size : %d \n", (int)stat1.st_size);
 		printf("size : %d \n", (int)stat1.st_block);
 	}
