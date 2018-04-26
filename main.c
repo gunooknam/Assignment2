@@ -53,12 +53,6 @@ void filestat1(void)
 	if(stat("text1", &stat1)){
 		errno=errno<<1;
 	}
-	/*
-	else{ //테스트를 위한 코드
-		printf("size : %d \n", (int)stat1.st_size);
-		printf("size : %d \n", (int)stat1.st_block);
-	}
-	*/ 
 }
 //파일 2의 정보를 가져오는 함수 작성
 void filestat2(void)
