@@ -68,13 +68,14 @@ void filestat2(void)
 //파일 1의 시간 정보를 가져오는 함수 작성
 void filetime1(void)
 {
-	time1=*localtime(&stat1.st_mtime); 
+	time1=*localtime(&stat1.st_mtime);// stat구조체의 st_mtime:파일의 마지막 수정시간
+	 
 }
 
 //파일 2의 시간 정보를 가져오는 함수 작성
 void filetime2(void)
 {
-	time2=*localtime(&stat2.st_mtime);
+	time2=*localtime(&stat2.st_mtime);// stat구조체의 st_mtime:파일의 마지막 수정시간
 }
 
 //두 개의 파일 크기를 비교하는 함수 작성
@@ -104,11 +105,25 @@ void blockcmp(void)
 //두 개의 파일 수정 날짜를 비교하는 함수 작성
 void datecmp(void)
 {
-
+	printf("date compare\n");  
+	if(time1.tm_mon+1 > time2.tm_mon+1)
+		printf("text2 is early\n\n");
+	else if(time1.tm_mon+1 < time2.tm_mon+1)
+		printf("text1 is early\n\n");
+	else {
+		(time1.tm_mday > time2.tm_mday)? printf("text2 is early\n\n"): ( (time1.tm_mday <time2.tm_mday)? printf("text1 is early\n\n"):printf("same date\n\n") );  
+	}
 }
 
 //두 개의 파일 수정 시간을 비교하는 함수 작성
 void timecmp(void)
 {
-
+	printf("time compare\n");
+	if(time1.tm_hour > time2.tm_hour)
+		printf("text2 is early\n\n");
+	else if((int)time1.tm_hour < (int)time2.tm_hour)
+		printf("text1 is early\n\n");    
+	else {
+		(time1.tm_min > time2.tm_min)? printf("text2 is early\n\n"): ( (time1.tm_min <time2.tm_min)? printf("text1 is early\n\n"):printf("same time\n\n") );  
+	}  
 }
