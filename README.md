@@ -15,7 +15,7 @@
 
  현재 디렉토리내에 있는 두개의 텍스트 파일인 text1, text2의 정보를 비교해서 출력해주는 프로그램을 구현한다. 
 
-기능  ☞ [기능과 관련된 함수 정보](https://github.com/gunooknam/Assignment2/wiki)
+● 기능  ☞ [기능과 관련된 함수 정보](https://github.com/gunooknam/Assignment2/wiki)
 
 - 파일 사이즈 비교
 - 파일 블락 수 비교
