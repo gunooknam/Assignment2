@@ -28,3 +28,7 @@
 ![img](./info/result/installation.PNG)
 
 # Result Screen
+ 현제 디렉토리에 생성되어 있는 text1과 text2의 정보를 ls -l 명령어로 확인 후 프로그램을 실행하여 결과를 확인하는 화면
+
+![img](./info/result/result.PNG)
+
